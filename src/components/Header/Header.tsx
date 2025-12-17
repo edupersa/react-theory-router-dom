@@ -1,7 +1,9 @@
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+
+    const pathName = useLocation().pathname;
     console.log("Header component rendered");
 
     return (
@@ -9,9 +11,9 @@ const Header = () => {
             <h1>React Router DOM Example... </h1>
             <header className={styles.header}>
                 <nav className={styles.nav}>
-                    <Link to="/"> Home </Link>
-                    <Link to="/about"> About </Link>
-                    <Link to="/posts"> Post </Link>
+                    <Link className={pathName === "/" ? styles.active : ""} to="/"> Home </Link>
+                    <Link className={pathName === "/about" ? styles.active : ""} to="/about"> About </Link>
+                    <Link className={pathName === "/posts" ? styles.active : ""} to="/posts"> Post </Link>
                 </nav>
             </header>
         </>
