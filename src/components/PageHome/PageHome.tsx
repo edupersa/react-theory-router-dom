@@ -1,7 +1,7 @@
 
 const PageHome = () => {
 
-  console.log('PageHome render');
+  console.log('PageHome rendered');
   return (
     <h1>Home Page</h1>
   );

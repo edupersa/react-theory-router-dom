@@ -1,7 +1,7 @@
 
 const PagePost = () => {
 
-  console.log('PagePost render');
+  console.log('PagePost rendered');
   return (
     <h1>Post Page</h1>
   );

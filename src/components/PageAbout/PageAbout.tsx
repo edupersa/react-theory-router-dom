@@ -1,7 +1,7 @@
 
 const PageAbout = () => {
 
-  console.log('PageAbout render');
+  console.log('PageAbout rendered');
   return (
     <h1>About Page</h1>
   );
