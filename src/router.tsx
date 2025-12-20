@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         path: `/parameter-routes`,
         element: <ParameterRoutes />,
         children: [
-          { path: "/:randomId", element: <ParameterRouteRecieved /> },
+          { path: ":randomId", element: <ParameterRouteRecieved /> },
         ],
       },
     ],

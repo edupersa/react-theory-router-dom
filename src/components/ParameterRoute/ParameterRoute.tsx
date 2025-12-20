@@ -16,7 +16,7 @@ const ParameterRoute = () => {
     <>
       <h1>Parameter Route Page</h1>
       {!randomId && <p> Notice that right now the parameter is NOT passed in the URL and received by the child component until the user navigates to a specific route.</p>}
-      {randomId && <p>Notice that the parameter is now passed (YES) in the URL and received by the child component.</p>}
+      {randomId && <p>The parameter is now passed.</p>}
       <Link to={`/parameter-routes/${randomId_1}`}>
         Go to Parameter Route with id: {randomId_1}
       </Link>
