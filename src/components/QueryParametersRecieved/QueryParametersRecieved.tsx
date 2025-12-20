@@ -15,7 +15,7 @@ const QueryParametersRecieved = () => {
 
   return (
     // <h2> Query Parameters Recieved Component: {name ? name : "No name provided"} and {age ? age : "No age provided"} </h2>
-    <h2> Query Parameters Recieved Component: {name ? age ? `${name} and ${age}` : name : age ? age : "No parameters provided Evaluated."} </h2>
+    <h2> Query Parameters Recieved - {name ? age ? `name: "${name}" and age: "${age}"` : `name: "${name}"` : age ? `age: "${age}"` : "No parameters provided Evaluated."} </h2>
   );
 };
 
