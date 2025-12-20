@@ -1,27 +1,48 @@
-import styles from "./App.module.css";
-import Header from "./components/Header/Header";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageHome from "./components/PageHome/PageHome";
 import PageAbout from "./components/PageAbout/PageAbout";
-import PagePost from "./components/PagePost/PagePost";
+import LayoutPages from "./components/LayoutPages/LayoutPages";
+import NestedRoute from "./components/NestedRoute/NestedRoutes";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LayoutPages />,
+    children: [
+      {
+        path: "/",
+        element: <PageHome />,
+      },
+      {
+        path: "/about",
+        element: <PageAbout />,
+      },
+      {
+        path: "/nested-routes",
+        element: <NestedRoute />,
+        children: [
+          {
+            path: "nested-1",
+            element: <h2>Nested 1 Content Children</h2>,
+          },
+          {
+            path: "nested-2",
+            element: <h2>Nested 2 Content Children</h2>,
+          },
+        ],
+      },
+      {},
+    ],
+  },
+  {
+    path: "*",
+    element: <h1>Not Found Page</h1>,
+  },
+]);
 
 function App() {
-    console.log("App component rendered");
-
-    return (
-        <div className={styles.container}>
-            <BrowserRouter>
-                <Header></Header>
-                <Routes>
-                    <Route path="/" element={<PageHome/>}></Route>
-                    <Route path="/about" element={<PageAbout />}></Route>
-                    <Route path="/posts" element={<PagePost />}></Route>
-                    {/* <Route path='/posts/:id' element={<h1>Post ID Page</h1>}></Route> */}
-                    <Route path="*" element={<h1>Not Found Page</h1>}></Route>
-                </Routes>
-            </BrowserRouter>
-        </div>
-    );
+  console.log("App component rendered");
+  return <RouterProvider router={router} />;
 }
 
 export default App;
