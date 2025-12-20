@@ -6,6 +6,8 @@ import LayoutPages from "./components/LayoutPages/LayoutPages";
 import NestedRoute from "./components/NestedRoute/NestedRoutes";
 import ParameterRoutes from "./components/ParameterRoute/ParameterRoute";
 import ParameterRouteRecieved from "./components/ParameterRouteRecieved/ParameterRouteRecieved";
+import QueryParameters from "./components/QueryParameters/QueryParameters";
+import QueryParametersRecieved from "./components/QueryParametersRecieved/QueryParametersRecieved";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +40,18 @@ const router = createBrowserRouter([
         path: `/parameter-routes`,
         element: <ParameterRoutes />,
         children: [
-          { path: ":randomId", element: <ParameterRouteRecieved /> },
+          { 
+            path: ":randomId", 
+            element: <ParameterRouteRecieved /> 
+          }
         ],
+      },
+      { 
+        path: `/query-parameters`, 
+        element: <QueryParameters/>,
+        children: [
+          { path: "?*", element: <QueryParametersRecieved /> }
+        ]
       },
     ],
   },

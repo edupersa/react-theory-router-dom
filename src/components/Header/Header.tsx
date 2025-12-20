@@ -26,10 +26,16 @@ const Header = () => {
             Nested-Routes
           </Link>
           <Link
-            className={pathName === "/parameter-routes" ? styles.active : ""}
+            className={pathName.includes("/parameter-routes") ? styles.active : ""}
             to={`/parameter-routes`}
           >
             Parameter-Routes
+          </Link>
+          <Link
+            className={pathName === "/query-parameters" ? styles.active : ""}
+            to={`/query-parameters`}
+          >
+            Query-Parameters
           </Link>
         </nav>
       </header>
