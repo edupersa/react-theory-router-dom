@@ -1,4 +1,3 @@
-
 import styles from "./Header.module.css";
 import { Link, useLocation } from "react-router-dom";
 
@@ -12,22 +11,25 @@ const Header = () => {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <Link className={pathName === "/" ? styles.active : ""} to="/">
-            {" "}
-            Home{" "}
+            Home
           </Link>
           <Link
             className={pathName === "/about" ? styles.active : ""}
             to="/about"
           >
-            {" "}
-            About{" "}
+            About
           </Link>
           <Link
             className={pathName === "/nested-routes" ? styles.active : ""}
             to="/nested-routes"
           >
-            {" "}
-            Nested-Routes{" "}
+            Nested-Routes
+          </Link>
+          <Link
+            className={pathName === "/parameter-routes" ? styles.active : ""}
+            to={`/parameter-routes`}
+          >
+            Parameter-Routes
           </Link>
         </nav>
       </header>
